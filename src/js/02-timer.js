@@ -54,9 +54,10 @@ function getTimer() {
   if (resultTime > 0) {
     newClock(time);
   }
-
+  
   if (resultTime < 1000) {
     clearInterval(timerId);
+    refs.btn.disabled = false;
   }
 }
 
@@ -73,13 +74,13 @@ function btnClick() {
   if (timerId) {
     return;
   }
-  timerId = setInterval(getTimer, 1000)
+  timerId = setInterval(getTimer, 1000);
+  refs.btn.disabled = true;
 }
 
 function addLeadingZero(value) {
   return String(value).padStart(2, '0');
 }
-
 
 function convertMs(ms) {
   // Number of milliseconds per unit of time

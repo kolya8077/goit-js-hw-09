@@ -6,6 +6,8 @@ const refs = {
 
 refs.form.addEventListener('submit', onSubmit);
 
+console.log();
+
 function createPromise(position, delay) {
   return new Promise((resolve, reject) => {
     const shouldResolve = Math.random() > 0.3;
