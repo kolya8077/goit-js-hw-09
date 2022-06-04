@@ -58,6 +58,7 @@ function getTimer() {
   if (resultTime < 1000) {
     clearInterval(timerId);
     refs.btn.disabled = false;
+    refs.input.disabled = false;
   }
 }
 
@@ -76,6 +77,7 @@ function btnClick() {
   }
   timerId = setInterval(getTimer, 1000);
   refs.btn.disabled = true;
+  refs.input.disabled = true;
 }
 
 function addLeadingZero(value) {
